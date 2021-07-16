@@ -1,0 +1,44 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.lri-form {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+
+    &__label {
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+    &__inputs {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__input {
+      display: flex;
+      flex-basis: 48%;
+      outline: none;
+      border: 1px solid black;
+      height: 30px;
+
+      &:first-child {
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+.search-container {
+  margin-top: 50px;
+}

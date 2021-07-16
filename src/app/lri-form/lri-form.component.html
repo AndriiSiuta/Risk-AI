@@ -1,0 +1,81 @@
+<h1>
+  Lri Form
+</h1>
+
+<h2 style="color: red">
+  Notice to change the search result please move to lri-form.service and change mock data!
+</h2>
+
+<form
+  [formGroup]="lriForm"
+  class="lri-form">
+  <div class="input-container">
+    <div class="input-container__label">
+      Center of radius
+    </div>
+
+    <div class="input-container__inputs">
+      <input
+        formControlName="radiusX"
+        type="text"
+        class="input-container__input"
+        placeholder="Longitude">
+
+      <input
+        formControlName="radiusY"
+        type="text"
+        class="input-container__input"
+        placeholder="Latitude">
+    </div>
+
+    <div class="input-container">
+      <div class="input-container__label">
+        Border of radius
+      </div>
+
+      <div class="input-container__inputs">
+        <input
+          formControlName="borderX"
+          type="text"
+          class="input-container__input"
+          placeholder="Longitude">
+
+        <input
+          formControlName="borderY"
+          type="text"
+          class="input-container__input"
+          placeholder="Latitude">
+      </div>
+    </div>
+  </div>
+
+  <div class="locations-container"></div>
+
+  <button
+    (click)="onFormSubmit()"
+    class="lri-form__submit">
+    Search
+  </button>
+</form>
+
+<div class="search-container">
+  <h1>
+    Search result
+
+    <ng-container *ngFor="let point of intersectionList | async">
+      <div class="point">
+        <h1>
+          Point
+        </h1>
+        <div class="point-x">
+          x - {{ point.x }}
+        </div>
+
+        <div class="point-y">
+          y - {{ point.y }}
+        </div>
+      </div>
+
+    </ng-container>
+  </h1>
+</div>
